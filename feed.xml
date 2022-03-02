@@ -3,12 +3,105 @@
     <title>Lập trình dễ òm</title>
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/feed.xml" rel="self" />
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022" />
-    <updated>2022-03-02T23:05:35+07:00</updated>
+    <updated>2022-03-02T23:13:08+07:00</updated>
     <author>
         <name>Lập trình dễ òm</name>
     </author>
     <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022</id>
 
+    <entry>
+        <title>Phân biệt Number và parseInt trong javascript</title>
+        <author>
+            <name>Lập trình dễ òm</name>
+        </author>
+        <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-biet-number-va-parseint-trong-javascript/"/>
+        <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-biet-number-va-parseint-trong-javascript/</id>
+
+        <updated>2022-03-02T23:13:08+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/6/javascript-number-vs-parseInt.jpeg" alt="" />
+                    ✴️ Công dụng của Number và parseInt là gì? Nói về công dụng thì Number và parseInt đều dùng để chuyển đổi 1 kiểu dữ liệu khác sang kiểu số. Nếu convert số nguyên thì cả 2 đều như nhau. Ví dụ: Number("123"); // =&gt; 123 parseInt("123"); // =&gt; 123 ✴️ Giống&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/6/javascript-number-vs-parseInt.jpeg" alt="" />
+                <h3 id="công-dụng-của-number-và-parseint-là-gì">✴️ Công dụng của Number và parseInt là gì?</h3>
+<ul>
+<li>Nói về công dụng thì <code>Number</code> và <code>parseInt</code> đều dùng để <strong>chuyển đổi</strong> 1 kiểu dữ liệu khác <strong><code>sang kiểu số</code></strong>.</li>
+<li>Nếu convert số nguyên thì cả 2 đều như nhau.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="s2">"123"</span><span class="p">);</span> <span class="c1">// =&gt; 123
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"123"</span><span class="p">);</span> <span class="c1">// =&gt; 123</span></code></pre>
+</div>
+<h3 id="công-dụng-của-number-và-parseint-là-gì">✴️ Giống nhau</h3>
+<h5 id="convert-string-của-số-nguyên">✍ Convert string của số nguyên</h5>
+<ul>
+<li>
+<p>Cả 2 đều có thể convert string là số nguyên sang số nguyên. Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="s2">"12345"</span><span class="p">);</span> <span class="c1">// =&gt; 123.25
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"12345"</span><span class="p">);</span> <span class="c1">// =&gt; 123
+</span></code></pre>
+</div>
+</li>
+</ul>
+<h5 id="convert-string-của-số-nguyên">✍ Tự trim khoảng trắng</h5>
+<ul>
+<li>Cả 2 đều tự trim khoảng trắng trước và sau để convert sang số Ví dụ:
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="s2">"   123   "</span><span class="p">);</span> <span class="c1">// =&gt; 123
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"   123   "</span><span class="p">);</span> <span class="c1">// =&gt; 123</span></code></pre>
+</div>
+</li>
+</ul>
+<h3 id="công-dụng-của-number-và-parseint-là-gì">✴️ Khác nhau</h3>
+<h5 id="convert-string-của-số-nguyên">✍ Chuyển đổi (Convert) số thực</h5>
+<p>Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="s2">"123.25"</span><span class="p">);</span> <span class="c1">// =&gt; 123.25
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"123.35"</span><span class="p">);</span> <span class="c1">// =&gt; 123</span></code></pre>
+</div>
+<p>Như bạnd đã thấy, kết quả của 2 dòng trên sẽ khác nhau:</p>
+<ul>
+<li><code>Number</code> có thể convert string của số thực thành <code>số thực</code>.</li>
+<li><code>parseInt</code> convert số thực thành <code>số nguyên</code>.</li>
+</ul>
+<h5 id="convert-string-của-số-nguyên">✍ Chuyển đổi Boolean</h5>
+<p>Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// =&gt; 1
+</span><span class="nb">Number</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// =&gt; 0
+</span>
+<span class="nb">parseInt</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// =&gt; NaN
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// =&gt; NaN</span></code></pre>
+</div>
+<ul>
+<li><code>Number</code> convert boolean thành <code>số 0 hoặc 1</code>.</li>
+<li><code>parseInt</code> không thể convert boolean, nên nó trả về giá trị <code>NaN</code>.</li>
+</ul>
+<h5 id="convert-string-của-số-nguyên">✍ Chuyển đổi String (gồm số và ký tự)</h5>
+<p>Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nb">Number</span><span class="p">(</span><span class="s2">"abc123"</span><span class="p">);</span> <span class="c1">// =&gt; NaN
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"abc123"</span><span class="p">);</span> <span class="c1">// =&gt; NaN
+</span>
+<span class="nb">Number</span><span class="p">(</span><span class="s2">"123abc"</span><span class="p">);</span> <span class="c1">// =&gt; NaN
+</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">"123abc"</span><span class="p">);</span> <span class="c1">// =&gt; 123
+</span></code></pre>
+</div>
+<ul>
+<li><code>Number</code> không thể convert chuỗi <code>123abc</code> hay <code>abc123</code> thành số được, nó luôn trả về giá trị <code>NaN</code>.</li>
+<li><code>parseInt</code> không thể convert chuỗi <code>abc123</code>, nhưng lại có thể convert chuỗi <code>123abc</code>, nghĩa là parseInt sẽ lấy các ký tự là số ở đầu để convert sang số.</li>
+</ul>
+<h3 id="công-dụng-của-number-và-parseint-là-gì">✴️ Kết</h3>
+<p>Hy vọng thông qua các ví dụ trên, các bạn có thể hình dung được sự khác nhau của <code>Number</code> và <code>parseInt</code> rồi nhé, để biết được khi nào nên sử dụng cái nào cho phù hợp.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>&#x27;this&#x27; keyword trong Javascript</title>
         <author>
