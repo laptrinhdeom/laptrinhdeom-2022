@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.laptrinhdeom.xyz/laptrinhdeom-2022/sitemap.xml

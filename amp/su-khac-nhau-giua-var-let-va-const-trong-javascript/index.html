@@ -1,0 +1,612 @@
+<!doctype html><html amp lang="vi"><head><meta charset="utf-8"><title>Sự khác nhau giữa Var, Let và Const trong Javascript - Lập trình dễ òm</title><meta name="description" content="Var, Let và Const trong Javascript là gì? và sự khác nhau giữa chúng như thế nào? Khi nào nên sử dụng var, let và const, chúng ta cùng tìm hiểu nào"><link rel="canonical" href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/su-khac-nhau-giua-var-let-va-const-trong-javascript/"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"},"headline":"Sự khác nhau giữa Var, Let và Const trong Javascript","datePublished":"2022-03-01T23:29","dateModified":"2022-03-01T23:29","image":{"@type":"ImageObject","url":"https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/javascript-var-let-const.webp","height":458,"width":825},"description":"Var, Let và Const trong Javascript là gì? và sự khác nhau giữa chúng như thế nào? Khi nào nên sử dụng var, let và const, chúng ta cùng tìm hiểu nào","author":{"@type":"Person","name":"Lập trình dễ òm"},"publisher":{"@type":"Organization","name":"Lập trình dễ òm"}}</script><style amp-custom>article,
+aside,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+amp-img {
+  max-width: 100%; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit; }
+
+html {
+  font-size: 1rem; }
+
+body {
+  background: #f1f1f1;
+  color: #262626;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.6; }
+
+a {
+  color:  #039be5;
+  text-decoration: none;
+  -webkit-transition: all 0.12s linear 0s;
+  -o-transition: all 0.12s linear 0s;
+  transition: all 0.12s linear 0s; }
+
+a:hover {
+  color: #262626;
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink; }
+
+a:active {
+  color: #262626; }
+
+a:focus {
+  outline: 2px dotted #039be5; }
+
+figure,
+blockquote,
+p,
+ul,
+ol,
+dl,
+table,
+hr,
+fieldset {
+  margin-top: 1.6rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #262626;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 2.13333rem; }
+
+h1 {
+  font-size: 1.67583rem;
+  font-weight: normal; }
+
+h2 {
+  font-size: 1.4729rem; }
+
+h3 {
+  font-size: 1.29454rem; }
+
+h4 {
+  font-size: 1.13778rem; }
+
+h5 {
+  font-size: 1rem; }
+
+h6 {
+  font-size: 0.87891rem; }
+
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 0.8rem; }
+
+b,
+strong {
+  font-weight: 600; }
+
+blockquote {
+  color: #6c7175;
+  font-family: "Droid Serif", "Times", "Source Serif Pro", serif;
+  font-style: italic;
+  padding: 1.33333rem 0.53333rem 1.33333rem 3.2rem;
+  position: relative; }
+  blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 4.41226rem;
+    position: absolute;
+    left: 0;
+    top: -12px;
+    color: rgba(108, 113, 117, 0.5); }
+  blockquote > :nth-child(1) {
+    margin-top: 0; }
+
+ul,
+ol {
+  margin-left: 2rem; }
+  ul > li,
+  ol > li {
+    list-style: inherit;
+    padding: 0 0 0.26667rem 0.26667rem; }
+
+dl dt {
+  color: #262626;
+  font-weight: 600; }
+
+code,
+pre {
+  background-color: #f1f1f1;
+  font-family: monospace; }
+
+pre {
+  margin: 1.6rem 0 0;
+  padding: 1.6rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto; }
+  pre > code {
+    color: #262626;
+    padding: 0; }
+
+code {
+  border-radius: 3px;
+  color: #262626;
+  padding: 0.26667rem 0.53333rem; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  overflow-x: auto;
+  vertical-align: top;
+  text-align: left;
+  white-space: nowrap; }
+  table th {
+    font-weight: 500;
+    padding: 0.53333rem 1.06667rem; }
+  table tr {
+    border-bottom: 1px solid #d4d4d4; }
+    table tr:nth-child(2n) {
+      background: #f1f1f1; }
+  table td {
+    padding: 0.53333rem 1.06667rem; }
+
+figcaption {
+  clear: both;
+  color: rgba(108, 113, 117, 0.6);
+  font-size: 0.82397rem;
+  margin: 0.8rem 0 0;
+  text-align: center; }
+
+sub,
+sup {
+  font-size: 65%; }
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.btn, [type=button],
+[type=submit],
+button {
+  background: #039be5;
+  border: none;
+  border-radius: 2px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.87891rem;
+  font-weight: 500;
+  line-height: 1.9;
+  padding: 0.53333rem 1.33333rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .15s ease;
+  -o-transition: all .15s ease;
+  transition: all .15s ease;
+  width: auto; }
+  .btn:hover, [type=button]:hover,
+  [type=submit]:hover,
+  button:hover {
+    background: #262626;
+    color: #ffffff; }
+  .btn:focus, [type=button]:focus,
+  [type=submit]:focus,
+  button:focus {
+    outline: none; }
+  .btn-outline {
+    border: 1px solid #ddd;
+    background: #ffffff;
+    border-radius: 3px;
+    color: #262626; }
+
+[type=button],
+[type=submit],
+button {
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.navbar {
+  background: #039be5;
+  -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  line-height: 3;
+  max-height: 4rem; }
+  .navbar > div {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto; }
+  .navbar a {
+    color: #ffffff;
+    text-decoration: none; }
+  .navbar-sidebar-toggle {
+    left: 0;
+    position: relative;
+    text-indent: -99999rem; }
+    .navbar-sidebar-toggle:before {
+      content: "";
+      display: block;
+      border-top: 0.375rem double #ffffff;
+      border-bottom: 0.125rem solid #ffffff;
+      height: 0.125rem;
+      position: absolute;
+      text-indent: 0;
+      top: 50%;
+      width: 1.3rem;
+      -webkit-transform: translate(0px, -50%);
+      -ms-transform: translate(0px, -50%);
+      transform: translate(0px, -50%); }
+
+
+.logo {
+            display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+            margin: 0 auto;
+            height: 2rem;
+            text-indent: -9999px;
+            width: 240px;vertical-align: middle;
+        }
+        .logo.logo-text {
+            line-height: 2;
+            text-align: center;
+            text-indent: 0;
+        }
+
+amp-sidebar {
+  background: #ffffff;
+  width: 240px; }
+  amp-sidebar > ul {
+    margin: 0.8rem 0 0;
+    padding: 0; }
+    amp-sidebar > ul ul {
+      border-left: 1px solid #d4d4d4;
+      margin: 0.53333rem 0 0; }
+    amp-sidebar > ul li {
+      color: #262626;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      list-style: none;
+      line-height: 1.4;
+      padding: 0.42667rem 1.06667rem; }
+      amp-sidebar > ul li li {
+        font-weight: normal;
+        padding: 0.26667rem 0 0.26667rem 1.06667rem; }
+    amp-sidebar > ul a,
+    amp-sidebar > ul a:visited {
+      color: #262626; }
+
+.bg-white {
+  background: #ffffff; }
+
+.wrap-page {
+  max-width: 700px;
+  margin: 0 auto; }
+
+@media all and (max-width: 43.6875em) {
+  .wrap-inner {
+    padding: 0 6%; } }
+
+.page-title {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 3px rgba(38, 38, 38, 0.1);
+  box-shadow: 0 2px 3px rgba(38, 38, 38, 0.1);
+  margin-bottom: 0.8rem;
+  padding: 1.6rem 6%; }
+  .page-title > h1 {
+    margin: 0;
+    font-size: 1.29454rem; }
+  .page-title > p {
+    font-size: 0.87891rem;
+    color: #6c7175;
+    line-height: 1.3;
+    margin: 0.26667rem 0 0; }
+  .page-title-author {
+    border-radius: 50%;
+    float: left;
+    height: 2.5rem;
+    width: 2.5rem; }
+    .page-title-author + h1 {
+      margin-left: 3.5rem; }
+      .page-title-author + h1 + p {
+        margin-left: 3.5rem; }
+
+.card {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 3px rgba(38, 38, 38, 0.1);
+  box-shadow: 0 2px 3px rgba(38, 38, 38, 0.1);
+  margin-bottom: 0.8rem;
+  padding-bottom: 1.06667rem; }
+
+  .card-meta {
+    border-top: 1px solid #d4d4d4;
+    color: rgba(108, 113, 117, 0.6);
+    font-size: 0.7242rem;
+    font-weight: 500;
+    margin-top: 1.06667rem;
+    padding-top: 1.06667rem;
+    text-transform: uppercase; }
+    .card-meta a + time:before {
+      content: "";
+      background: #d4d4d4;
+      display: inline-block;
+      height: 3px;
+      margin: 0 8px;
+      width: 3px;
+      vertical-align: middle;
+      border-radius: 50%; }
+  .card-text {
+    font-size: 0.9375rem;
+    overflow: hidden;
+    padding: 0 6%; }
+    .card-text h2 {
+      font-size: 1.13778rem; }
+
+.post {
+  margin-bottom: 2.13333rem; }
+  .post-featured-image {
+    margin-top: 0;
+    position: relative; }
+    .post-featured-image > figcaption {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      color: #ffffff;
+      position: absolute;
+      bottom: 0.8rem;
+      padding: 0 0.26667rem;
+      right: 6%; }
+  .post-header {
+    margin-bottom: 2.13333rem; }
+  .post-meta {
+    border-bottom: 1px solid #d4d4d4;
+    color: rgba(108, 113, 117, 0.6);
+    font-size: 0.7242rem;
+    font-weight: 500;
+    margin-top: 1.06667rem;
+    padding-bottom: 1.06667rem;
+    text-transform: uppercase; }
+    .post-meta a + time:before {
+      content: "";
+      background: #d4d4d4;
+      display: inline-block;
+      height: 3px;
+      margin: 0 8px;
+      width: 3px;
+      vertical-align: middle;
+      border-radius: 50%; }
+  .post-tag {
+    margin: 0; }
+    .post-tag > li {
+      display: inline-block;
+      padding: 0; }
+      .post-tag > li a {
+        background: #f1f1f1;
+        border-radius: 2px;
+        color: #6c7175;
+        font-size: 0.77248rem;
+        display: inline-block;
+        margin: 0 0.26667rem 0.26667rem 0;
+        padding: 0.26667rem 0.53333rem; }
+        .post-tag > li a:hover {
+          background: #039be5;
+          color: #ffffff;
+          text-decoration: none; }
+  .post-share {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    width: 100%; }
+    .post-share amp-social-share {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+      background-size: 24px; }
+  .post-scroll {
+    color: #ffffff;
+    background: #039be5;
+    bottom: 10px;
+    border-radius: 50%;
+    border: none;
+    -webkit-box-shadow: 0 1px 1.5px 0 rgba(38, 38, 38, 0.12), 0 1px 1px 0 rgba(38, 38, 38, 0.24);
+    box-shadow: 0 1px 1.5px 0 rgba(38, 38, 38, 0.12), 0 1px 1px 0 rgba(38, 38, 38, 0.24);
+    font-size: 1.13778rem;
+    height: 46px;
+    opacity: 0;
+    outline: none;
+    position: fixed;
+    padding: 0;
+    right: 4%;
+    visibility: hidden;
+    width: 46px;
+    z-index: 9999; }
+    .post-scroll-marker {
+      height: 0px;
+      position: absolute;
+      top: 100px;
+      width: 0px; }
+        .post-pagination {
+    background: #f1f1f1;
+    -webkit-box-shadow: inset 0 2px 3px rgba(38, 38, 38, 0.1);
+    box-shadow: inset 0 2px 3px rgba(38, 38, 38, 0.1);
+    border-top: 1px solid #d4d4d4;
+    padding: 1.06667rem 0; }
+    .post-pagination > div {
+      line-height: 1.2;
+      padding: 0.53333rem 1.06667rem;
+      text-align: center; }
+      .post-pagination > div span {
+        display: block;
+        color: #6c7175;
+        font-size: 0.7242rem;
+        font-weight: 500;
+        margin-bottom: 0.26667rem;
+        text-transform: uppercase; }
+    .post-pagination-prev a:before {
+      content: "\2190";
+      margin-right: 0.26667rem; }
+    .post-pagination-next a:after {
+      content: "\2192";
+      margin-left: 0.26667rem; }
+
+aside {
+  margin: 1.6rem 0 0; }
+
+.align-left {
+  text-align: left; }
+
+.align-right {
+  text-align: right; }
+
+.align-center {
+  text-align: center; }
+
+.align-justify {
+  text-align: justify; }
+
+.msg {
+  border-left: 2px solid transparent;
+  padding: 1.06667rem 1.06667rem; }
+  .msg--highlight {
+    background-color: #fff8e6;
+    border-color: #e2ac4f; }
+  .msg--info {
+    background: rgba(45, 97, 201, 0.03);
+    border-color: #039be5; }
+  .msg--success {
+    background: #f7fbf6;
+    border-color: #5ab44b; }
+  .msg--warning {
+    background: #fff3f3;
+    border-color: #c06367;
+    color: #a94442; }
+
+.dropcap:first-letter {
+  float: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 2.16943rem;
+  line-height: 0.7;
+  margin-right: 0.53333rem;
+  padding: 0.53333rem 0.53333rem 0.53333rem 0; }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0.8rem 0; }
+  .pagination > a {
+    padding-left: 0;
+    padding-right: 0;
+    width: 49%; }
+  .pagination-right {
+    margin-left: auto; }
+
+.bottom {
+  background: #039be5;
+  color: #ffffff;
+  padding: 1.06667rem 4%;
+  text-align: center; }</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo logo-text" href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/">Lập trình dễ òm</a></div></nav><main class="wrap-page"><article class="post"><figure class="post-featured-image"><amp-img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/javascript-var-let-const.webp" alt="" srcset="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/responsive/javascript-var-let-const-xs.webp 300w ,https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/responsive/javascript-var-let-const-sm.webp 480w ,https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/responsive/javascript-var-let-const-md.webp 768w" sizes="(max-width: 768px) 100vw, 768px" height="458" layout="responsive" width="825"></amp-img></figure><div class="wrap-inner"><header class="post-header"><h1>Sự khác nhau giữa Var, Let và Const trong Javascript</h1><p class="post-meta">Bởi <a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/a/lap-trinh-de-om/" rel="nofollow" title="Lập trình dễ òm">Lập trình dễ òm</a> <time datetime="2022-03-01T23:29">01/03/2022</time></p></header><h1 id="var-let-và-const-trong-javascript">var, let và const trong Javascript</h1><h2 id="cách-khai-báo-khởi-tạo-biến-trong-javascript">Cách khai báo, khởi tạo biến trong Javascript</h2><p>Khi lập trình chúng ta thường phải sử dụng các biến để lưu trữ giá trị, dữ liệu…</p><p>Trong Javascript thì để khởi tạo, khai báo biến, chúng ta sẽ dùng <strong>var</strong> hoặc <strong>let</strong> hoặc <strong>const</strong>.</p><p><strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"Lập trình Dễ òm"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">helloMessage</span> <span class="o">=</span> <span class="nx">hello</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+<span class="c1">// Kết quả: 'Xin chào Lập trình Dễ òm'</span></code></pre></div><p>Khá dễ hiểu phải không, vậy sự khác nhau giữa chúng là gì và khi nào nên dùng <strong>var</strong>, <strong>let</strong> và <strong>const</strong>?</p><p><strong>let</strong> và <strong>const</strong> là 2 từ khóa mới được giới thiệu trong <code>ES6</code> vào năm 2015, trước đó thì khởi tạo biến chỉ có 1 cách duy nhất là sử dụng từ khóa <strong>var</strong>.</p><h2 id="var">👉 var</h2><h4 id="scope-của-var">Scope của var</h4><ul><li><strong>var</strong> có scope là <strong>global scope</strong> hoặc <strong>function scope</strong>.</li><li>Nếu khởi tạo biến với var ở <strong>ngoài</strong> function thì nó có scope là <strong>global scope</strong>.</li><li>Nếu khởi tạo biến với var ở <strong>trong</strong> function thì nó có scope là <strong>function scope</strong>.</li></ul><h4 id="khai-báo-lại-redeclared-và-thay-đổi-giá-trị">Khai báo lại (redeclared) và thay đổi giá trị</h4><ul><li><p><strong>var</strong> cho phép chúng ta <strong>khai báo lại</strong>(redeclared) biến với cùng tên, nhưng cùng hoặc khác giá trị mà không bị lỗi gì.</p><p><strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span>
+</code></pre><button class="copyCodeButton">Copy</button></div></li><li><p>var cũng cho phép chúng ta thay đổi giá trị bất cứ khi nào cần.</p><p><strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span>
+</code></pre><button class="copyCodeButton">Copy</button></div></li></ul><h4 id="hoisting-của-var">Hoisting của var?</h4><p><strong>Hoisting là gì?</strong> bạn hãy đọc thêm ở đây: <a class="link" href="https://www.laptrinhdeom.xyz/bai-viet/javascript/hoisting-trong-javascript-la-gi/">Hoisting trong Javascript</a></p><p><strong>Hoisting</strong> là cơ chế của Javascript sẽ chuyển các phần khai báo của biến và hàm lên top của phạm vi của biến và hàm đó.</p><p>Với <strong>var</strong> thì biến sẽ được hoisted với giá trị <strong>undefined</strong>.</p><h4 id="lưu-ý-với-var">Lưu ý với var</h4><p>Khi làm việc với <strong>var</strong>, bạn phải chú ý thật kỹ các lưu ý sau đây.</p><ul><li><strong>var</strong> không báo lỗi khi khai báo lại biến với cùng tên, nên rất khó phát hiện lỗi, có thể vô tình ghi đè giá trị của 1 biến nào đó phía trên mà chúng ta không biết. Điều này làm chúng ta mất nhiều khá thời gian để debug lỗi.</li><li>Gán giá trị cho biến <strong>var</strong> ở <strong>global scope</strong> thì biến đó sẽ trở thành <strong>thuộc tính</strong> của object <strong>window</strong>.</li></ul><hr><h2 id="var">👉 let</h2><h4 id="scope-của-let">Scope của let</h4><ul><li><strong>let</strong> là <strong>block scope</strong>.</li><li><strong>block</strong> nghĩa là code được viết trong cặp dấu <code>{}</code>, ví dụ function, if/else, switch - case, for/while… Nghĩa là biến được khởi tạo với <strong>let</strong> trong block thì sẽ không thể sử dụng ở ngoài block đó, <strong>var</strong> thì có thể được nhé.</li></ul><p><strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Biến hello sẽ KHÔNG thể được sử dụng ở đây</span></code></pre></div><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Biến hello sẽ CÓ thể được sử dụng ở đây</span></code></pre></div><h4 id="khai-báo-lạiredeclared-và-thay-đổi-giá-trị">Khai báo lại(redeclared) và thay đổi giá trị</h4><ul><li><p><strong>let</strong> KHÔNG cho phép khai báo lại(redeclared) biến với cùng tên với phía trên.</p></li><li><p>Khi bạn cố tình redeclared biến thì sẽ nhận được lỗi này: <code>error: Identifier 'variableName' has already been declared</code> <strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span>
+<span class="c1">// Kết quả: error: Identifier 'hello' has already been declared</span></code></pre></div></li><li><p>Redeclared biến khác scope thì KHÔNG bị lỗi nhé. <strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">);</span> <span class="c1">// "Xin chào bạn"
+</span><span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">);</span> <span class="c1">// "Xin chào"</span></code></pre></div></li><li><p><strong>let</strong> cũng giống <strong>var</strong>, let CHO phép chúng ta thay đổi giá trị bất cứ lúc nào. <strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span></code></pre></div></li></ul><h4 id="hoisting-của-let">Hoisting của let?</h4><ul><li>Cũng giống như <strong>var</strong>, <strong>let</strong> cũng được <strong>hoisted</strong> lên top của scope, <strong>NHƯNG</strong> không khởi tạo giá trị <strong>undefined</strong> như <strong>var</strong>.</li><li>Nghĩa là bạn sẽ bị báo lỗi <code>Reference Error</code> khi sử dụng biến với let mà chưa khai báo ở phía trên.</li></ul><hr><h2 id="var">👉 const</h2><h4 id="scope-của-const">Scope của const</h4><p>Tương tự như <strong>let</strong>, <strong>const</strong> cũng có scope là <strong>block</strong>.</p><h4 id="khai-báo-lại-và-thay-đổi-giá-trị">Khai báo lại và thay đổi giá trị</h4><ul><li><p>const chỉ được khai báo và gán giá trị 1 lần duy nhất, giá trị của const là không thể thay đổi, nếu cố tình gán giá trị cho const, bạn sẽ nhận lỗi này: <code>error: Assignment to constant variable.</code></p></li><li><p>const cũng không cho phép redeclared biến, bạn sẽ nhận được lỗi này khi cố gắng redeclare: <code>error: Identifier 'variableName' has already been declared</code>.</p></li></ul><h4 id="hoisting-của-const">Hoisting của const?</h4><p><strong>const hoisting</strong> giống y chang <strong>let</strong>, nghĩa là bạn sẽ bị lỗi khi sử dụng biến trước khi khai báo nó.</p><h4 id="lưu-ý-với-const">Lưu ý với const</h4><ul><li><p>Giá trị của biến với const không thể thay đổi, nhưng bạn có thể thay đổi thuộc tính (properties) của object <strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">employee</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">firstName</span><span class="o">:</span> <span class="s2">"Lập trình"</span><span class="p">,</span>
+  <span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Dễ òm"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">employee</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="s2">"Dễ òm phải không bạn"</span><span class="p">;</span> <span class="c1">// hợp lệ</span></code></pre></div></li><li><p>Có thể thêm/xóa/sửa các phần tử của 1 array với const <strong>Ví dụ:</strong></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">employees</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="nx">employees</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// [1,2,3,4,5]</span></code></pre></div></li></ul><hr><h2 id="var">👉 Tóm lượt sự khác nhau của var, let và const</h2><ul><li><strong>var</strong> là <strong>global scope</strong> hoặc <strong>function scope</strong>, <strong>let</strong> và <strong>const</strong> là <strong>block scope</strong>.</li><li><strong>var</strong> <code>có thể</code> redeclared biến và gán lại giá trị, <strong>let</strong> <code>không thể</code> redeclared biến nhưng <code>có thể</code> gán lại giá trị, trong khi <strong>const</strong> thì <code>không thể</code> redeclared biến và cũng <code>không thể</code> gán lại giá trị.</li><li>Cả 3 đều được <strong>hoisted</strong> lên top của scope. Nhưng <strong>var</strong> thì hoisted với giá trị <strong>undefined</strong>, trong khi đó <strong>let</strong> và <strong>const</strong> thì hoisted nhưng <strong>không có giá trị</strong>.</li><li><strong>var</strong> và <strong>let</strong> có thể khởi tạo và không cần gán giá trị ban đầu, sau đó có thể gán giá trị khác, nhưng <strong>const</strong> thì bắt buộc phải gán giá trị ban đầu, và <strong>const</strong> không thể gán lại giá trị.</li></ul><aside><div class="post-share"><amp-social-share type="system" width="40" height="40" data-param-text="Sự khác nhau giữa Var, Let và Const trong Javascript"></amp-social-share><amp-social-share type="facebook" width="40" height="40" data-param-app_id="" data-param-text="Sự khác nhau giữa Var, Let và Const trong Javascript" data-param-href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"></amp-social-share><amp-social-share type="twitter" width="40" height="40" data-param-text="Sự khác nhau giữa Var, Let và Const trong Javascript" data-param-url="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"></amp-social-share><amp-social-share type="pinterest" width="40" height="40" data-param-url="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"></amp-social-share><amp-social-share type="tumblr" width="40" height="40" data-param-text="Sự khác nhau giữa Var, Let và Const trong Javascript" data-param-url="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"></amp-social-share><amp-social-share type="whatsapp" width="40" height="40" data-param-text="Sự khác nhau giữa Var, Let và Const trong Javascript" data-param-url="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/su-khac-nhau-giua-var-let-va-const-trong-javascript/"></amp-social-share></div></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Bài trước</span> <a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/hoisting-trong-javascript-la-gi/">Hoisting trong Javascript là gì?</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
+                    "duration": "200ms",
+                    "fill": "both",
+                    "iterations": "1",
+                    "direction": "alternate",
+                    "animations": [{
+                        "selector": ".post-scroll",
+                        "keyframes": [{
+                            "opacity": "1",
+                            "visibility": "visible",
+                            "transform": "scale(1)"
+                        }]
+                    }]
+                }</script></amp-animation><amp-animation id="hideAnim" layout="nodisplay"><script type="application/json">{
+                    "duration": "200ms",
+                    "fill": "both",
+                    "iterations": "1",
+                    "direction": "alternate",
+                    "animations": [{
+                        "selector": ".post-scroll",
+                        "keyframes": [{
+                            "opacity": "0",
+                            "visibility": "hidden",
+                            "transform": "scale(0.1)"
+                        }]
+                    }]
+                }</script></amp-animation><div class="post-scroll-marker"><amp-position-observer on="enter:hideAnim.start; exit:showAnim.start" layout="nodisplay"></amp-position-observer></div><button class="post-scroll" on="tap:top.scrollTo(duration=200)">&#8593;</button><footer class="bottom">Powered by Publii</footer><amp-sidebar id="navbar-sidebar" layout="nodisplay"><ul><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/">Home</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/">Học lập trình</a><ul class="navbar__submenu level-2" aria-hidden="true"><li class="has-submenu"><span class="is-separator" aria-haspopup="true">Javascript</span><ul class="navbar__submenu level-3" aria-hidden="true"><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/javascript-co-ban/" title="Javascript Cơ bản" target="_self">Cơ bản</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/javascript-nang-cao/" target="_self">Nâng cao</a></li></ul></li><li class="has-submenu"><span class="is-separator" aria-haspopup="true">ReactJS</span><ul class="navbar__submenu level-3" aria-hidden="true"><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/react-co-ban/" target="_self">Cơ bản</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/react-nang-cao/" target="_self">Nâng cao</a></li></ul></li><li><span class="is-separator">React Native</span></li></ul></li><li><span>IDE</span><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/vscode-ide/" target="_self">VSCode</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/vim-ide/" target="_self">Vim</a></li></ul></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/">Hệ điều hành</a><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/he-dieu-hanh-android/" target="_self">Android</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/he-dieu-hanh-ios/" target="_self">iOS</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/he-dieu-hanh-windows/" target="_self">Windows</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/he-dieu-hanh-macos/" target="_self">MacOS</a></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/he-dieu-hanh-linux/" target="_self">Linux</a></li></ul></li><li><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/amp/t/tin-cong-nghe/">Tin công nghệ</a></li></ul></amp-sidebar></body></html>

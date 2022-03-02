@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/</loc>
+</url>
+<url>
+<loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/hoisting-trong-javascript-la-gi/</loc>
+<lastmod>2022-03-01T23:24:29+07:00</lastmod>
+<image:image>
+<image:loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/2/javascript-hoisting.webp</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/scope-cua-bien-trong-javascript/</loc>
+<lastmod>2022-03-01T23:22:07+07:00</lastmod>
+<image:image>
+<image:loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/1/javascript-scope.jpeg</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/su-khac-nhau-giua-var-let-va-const-trong-javascript/</loc>
+<lastmod>2022-03-01T23:29:19+07:00</lastmod>
+<image:image>
+<image:loc>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/3/javascript-var-let-const.webp</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+</urlset>
