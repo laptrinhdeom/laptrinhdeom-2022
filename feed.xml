@@ -3,12 +3,129 @@
     <title>Lập trình dễ òm</title>
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/feed.xml" rel="self" />
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022" />
-    <updated>2022-03-01T23:29:19+07:00</updated>
+    <updated>2022-03-02T23:01:08+07:00</updated>
     <author>
         <name>Lập trình dễ òm</name>
     </author>
     <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022</id>
 
+    <entry>
+        <title>Strict mode trong Javascript là gì?</title>
+        <author>
+            <name>Lập trình dễ òm</name>
+        </author>
+        <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/strict-mode-trong-javascript-la-gi/"/>
+        <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/strict-mode-trong-javascript-la-gi/</id>
+            <category term="Javascript cơ bản"/>
+
+        <updated>2022-03-02T23:01:08+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/4/javascript-use-strict.jpeg" alt="" />
+                    ❓Use strict là gì? Nó dùng để làm gì? Use strict là khái niệm mới từ khi ES5 được phát hành, nó là 1 chuỗi bình thường, và được trình duyệt có version Javascript ES5 trở lên hiểu được, còn trình duyệt hỗ trợ Javascript version&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/4/javascript-use-strict.jpeg" alt="" />
+                <h3 id="use-strict-là-gì-nó-dùng-để-làm-gì">❓Use strict là gì? Nó dùng để làm gì?</h3>
+<ul>
+<li>
+<p><strong>Use strict</strong> là khái niệm mới từ khi ES5 được phát hành, nó là 1 chuỗi bình thường, và được trình duyệt có version Javascript ES5 trở lên hiểu được, còn trình duyệt hỗ trợ Javascript version thấp hơn sẽ có vấn đề gì cả.</p>
+</li>
+<li>
+<p>Bởi vì Javascript là ngôn ngữ lập trình khá dễ dãi, khai báo và dùng biến kiểu gì cũng được, hay nói 1 cách khác là vô tội vạ, khiến cho nhiều bugs phát sinh và khó kiểm soát việc khai báo và sử dụng biến.</p>
+</li>
+<li>
+<p><strong>use strict</strong> được sinh ra để báo với Javascript rằng nó phải tuân theo <strong>strict mode</strong>. Với chế độ này thì bạn không thể sử dụng biến trước khi khai báo (nếu không có use strict thì bạn sẽ có thể sử dụng biến trước khi khai báo chúng).</p>
+</li>
+</ul>
+<h3 id="cách-khai-báo">👉 Cách khai báo</h3>
+<p><code>"use strict;";</code></p>
+<p>Đơn giản vậy thôi, bạn để dòng trên ở trên cùng của file javascript của bạn là được nhé, tất cả code javascript của bạn ở phía dưới sẽ là <strong>strict mode</strong>.</p>
+<p><strong>Ví dụ:</strong></p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="s2">"use strict;"</span><span class="p">;</span>
+<span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span> <br><span class="c1">// Lỗi, vì bạn chưa khai báo biến hello mà đã gán giá trị cho nó.
+</span>
+<span class="c1">// ------------------------
+</span>
+<span class="nx">sayHello</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span> <br><span class="c1">  // vẫn lỗi, vì bạn chưa khai báo biến hello mà đã gán giá trị cho nó.
+</span><span class="p">}</span></code></pre>
+<p><strong>Ví dụ 2:</strong></p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span> <span class="c1">// Không bị lỗi nhé
+</span>
+<span class="nx">sayHello</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s2">"use strict;"</span><span class="p">;</span>
+  <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào bạn"</span><span class="p">;</span> <br><span class="c1">  // lỗi, vì use strict được đặt trong function này.
+</span><span class="p">}</span></code></pre>
+</div>
+<h3 id="tại-sao-lại-phải-dùng-strict-mode">📄 Tại sao lại phải dùng strict mode?</h3>
+<p>Có vài lý do sau đây mà chúng ta nên sử dụng strict mode khi code:</p>
+<ul>
+<li>Tránh việc lập trình viên vô tình tạo ra 1 biến global scope mà họ không hề biết.
+<ul>
+<li>Vì trong chế độ bình thường, thì lập trình viên quên mất, nên tạo ra 1 biến global scope bằng cách không để var/let/const cho nó.</li>
+<li>Sau đó có logic phía dưới lại update giá trị cho biến global này, dẫn đến việc có thể vô tình tạo ra bug nào đó, khiến chúng ta mất khá nhiều thời gian để debug để tìm ra vấn đề.</li>
+</ul>
+</li>
+<li>Tạo cho chúng ta thói quen lập trình tốt hơn, tư duy cấu trúc và logic khi lập trình, phải khai báo biến trước khi sử dụng.</li>
+<li>Strict mode giúp chúng ta tránh việc code logic vô tội vạ, như: gán giá trị cho biến không được gán, sử dụng biến hoặc object hoặc thuộc tính không tồn tại…</li>
+</ul>
+<h3 id="các-trường-hợp-javascript-báo-lỗi-khi-sử-dụng-use-strict">💯 Các trường hợp Javascript báo lỗi khi sử dụng use strict:</h3>
+<ul>
+<li>
+<p>Sử dụng biến chưa được khai báo</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="s2">"use strict;"</span><span class="p">;</span>
+<span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span> <br><span class="c1">// Lỗi, vì bạn chưa khai báo biến hello mà đã gán giá trị cho nó.</span></code></pre>
+</div>
+</li>
+<li>
+<p>Delete 1 biến hoặc 1 object hoặc 1 function</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span>
+<span class="k">delete</span> <span class="nx">hello</span><span class="p">;</span> <span class="c1">// Lỗi
+</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Xin chào"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="k">delete</span> <span class="nx">sayHello</span><span class="p">;</span> <span class="c1">// Lỗi</span></code></pre>
+</div>
+</li>
+<li>
+<p>Sử dụng các keyword làm tên biến:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nb">eval</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span> <span class="c1">// Lỗi
+</span><span class="kd">let</span> <span class="nx">arguments</span> <span class="o">=</span> <span class="s2">"Xin chào"</span><span class="p">;</span> <span class="c1">// Lỗi</span></code></pre>
+</div>
+<p>Các tự khóa (keyword) không thể sử dụng làm tên biến:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="kr">implements</span>
+<span class="kr">interface</span>
+<span class="kd">let</span>
+<span class="kr">package</span>
+<span class="kr">private</span>
+<span class="kr">protected</span>
+<span class="kr">public</span>
+<span class="kr">static</span>
+<span class="k">yield</span>
+<span class="nb">eval</span>
+<span class="nx">arguments</span>
+<span class="p">...</span></code></pre>
+</div>
+</li>
+</ul>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Sự khác nhau giữa Var, Let và Const trong Javascript</title>
         <author>
