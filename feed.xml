@@ -3,12 +3,240 @@
     <title>Lập trình dễ òm</title>
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/feed.xml" rel="self" />
     <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022" />
-    <updated>2022-03-02T23:13:08+07:00</updated>
+    <updated>2022-03-04T18:52:04+07:00</updated>
     <author>
         <name>Lập trình dễ òm</name>
     </author>
     <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022</id>
 
+    <entry>
+        <title>[Phần 3] Vim IDE - Làm đẹp Vim với OneDark</title>
+        <author>
+            <name>Lập trình dễ òm</name>
+        </author>
+        <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-3-vim-ide-lam-dep-vim-voi-onedark/"/>
+        <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-3-vim-ide-lam-dep-vim-voi-onedark/</id>
+            <category term="IDE - Vim"/>
+
+        <updated>2022-03-04T18:52:04+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/cover.png" alt="" />
+                    Theme code highlight: [Onedark] Đây là theme code highlight mà mình thấy khá đẹp và thích sử dụng nhất, nó giống với theme trên Atom, nó trông thế này: Thêm dòng này vào file ~/.vimrc vim ~/.vimrc call plug#begin() ... Plug https://github.com/joshdick/onedark.vim call plug#end() ... syntax on&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/cover.png" alt="" />
+                <h3 id="theme-code-highlight-onedarkhttpsgithubcomjoshdickonedarkvim">Theme code highlight: <code>[<a href="https://github.com/joshdick/onedark.vim" target="_blank" rel="nofollow noopener noreferrer">Onedark</a>]</code></h3>
+<p>Đây là theme code highlight mà mình thấy khá đẹp và thích sử dụng nhất, nó giống với theme trên Atom, nó trông thế này:</p>
+<div class="gallery-wrapper"><div class="gallery" data-columns="1" data-is-empty="false">
+<figure class="gallery__item"><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/gallery/onedark.png" data-size="1574x1516"><img loading="lazy" src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/gallery/onedark-thumbnail.png" alt="" width="768" height="740"></a></figure>
+</div></div>
+<h3 id="cài-đặt-theme-onedark">Cài đặt theme <code>Onedark</code>:</h3>
+<p>Thêm dòng này vào file <code>~/.vimrc</code></p>
+<p><code>vim ~/.vimrc</code></p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-makefile" data-lang="makefile"><span class="err">call</span> <span class="err">plug</span><span class="c">#begin()
+</span><span class="err">...</span>
+<span class="nf">Plug https</span><span class="o">:</span>//<span class="n">github</span>.<span class="n">com</span>/<span class="n">joshdick</span>/<span class="n">onedark</span>.<span class="n">vim</span>
+<span class="err">call</span> <span class="err">plug</span><span class="c">#end()
+</span><span class="err">...</span>
+<span class="err">syntax</span> <span class="err">on</span>
+<span class="err">colorscheme</span> <span class="err">onedark</span>
+<span class="err">...</span></code></pre>
+Sau đó lưu lại và chạy lệnh này trên terminal, không cần thoát vim nha:</div>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-makefile" data-lang="makefile"><span class="err">:source</span> <span class="err">~/.vimrc</span>
+<span class="err">:PlugInstall</span></code></pre>
+Tận hưởng giao diện thôi nào 😋</div>
+<p>Phần tiếp theo chúng ta sẽ cài đặt giao diện cho phần footer giống thế này:</p>
+<p><a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/gallery/vim-airline.png" data-size="2348x50" style="font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);"><img loading="lazy" src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/9/gallery/vim-airline-thumbnail.png" alt="" width="768" height="16"></a></p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>[Phần 2] Vim IDE - Cài đặt Vim-Plug</title>
+        <author>
+            <name>Lập trình dễ òm</name>
+        </author>
+        <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-2-vim-ide-cai-dat-vim-plug/"/>
+        <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-2-vim-ide-cai-dat-vim-plug/</id>
+            <category term="IDE - Vim"/>
+
+        <updated>2022-03-04T18:28:10+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/8/vim-plug.png" alt="" />
+                    Cài đặt Vim để code giống IDE Vim-Plug Vim có rất nhiều Package Manager như: Nhưng Vim Plug có vẻ được rất nhiều người sử dụng, có lượt bình chọn khá cao, nên mình cũng xài Vim Plug luôn 🙂 Các lý do nên xài Vim Plug: Rất đơn&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/8/vim-plug.png" alt="" />
+                <h2 id="cài-đặt-vim-để-code-giống-ide">Cài đặt Vim để code giống IDE</h2>
+<h4 id="vim-plug">Vim-Plug</h4>
+<p>Vim có rất nhiều Package Manager như:</p>
+<ul>
+<li>Vim Plug</li>
+<li>Vundle</li>
+<li>Pathogen</li>
+<li>Dein.vim</li>
+<li>Janus</li>
+</ul>
+<p>Nhưng <strong>Vim Plug</strong> có vẻ được rất nhiều người sử dụng, có lượt bình chọn khá cao, nên mình cũng xài <strong>Vim Plug</strong> luôn 🙂</p>
+<p>Các lý do nên xài Vim Plug:</p>
+<ul>
+<li>Dễ dàng cài đặt, cấu hình và sử dụng</li>
+<li>Cài plugin từ bất cứ đâu, có thể từ folder, từ git, từ tên plugin…</li>
+<li>Dễ dàng gỡ bỏ plugins mình không cần xài nữa</li>
+<li>Cài đặt plugin khá nhanh</li>
+<li>Hỗ trợ 3 hệ điều hành thường sử dụng: Linux, MacOS, Windows</li>
+</ul>
+<h4 id="cài-đặt-vim-plughttpsgithubcomjunegunnvim-plug">Cài đặt <a class="link" href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">Vim Plug</a>:</h4>
+<p>Rất đơn giản, chỉ 1 dòng lệnh <code>curl</code> là cài xong rồi 🤤</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-makefile" data-lang="makefile"><span class="err">curl</span> <span class="err">-fLo</span> <span class="err">~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim</span> <span class="err">\</span>
+    <span class="nf">https</span><span class="o">:</span>//<span class="n">raw</span>.<span class="n">githubusercontent</span>.<span class="n">com</span>/<span class="n">junegunn</span>/<span class="n">vim</span>-<span class="n">plug</span>/<span class="n">master</span>/<span class="n">plug</span>.<span class="n">vim</span></code></pre>
+</div>
+<h4 id="cấu-hình-vim-plug">Cấu hình <code>Vim Plug</code>:</h4>
+<ul>
+<li>Tạo file <code>.vimrc</code> trong thư mục user của hệ điều hành, thường để trong dấu <code>~</code> như thế này: <code>~/.vimrc</code></li>
+<li>Để các plugin cần cài đặt bên trong khối này:</li>
+</ul>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-makefile" data-lang="makefile"><span class="err">call</span> <span class="err">plug</span><span class="c">#begin()
+</span><span class="err">...</span>
+<span class="err">call</span> <span class="err">plug</span><span class="c">#end()</span></code></pre>
+</div>
+<ul>
+<li>
+<p>Các plugin cần bắt đầu với từ khóa <code>Plug</code></p>
+</li>
+<li>
+<p>Ví dụ:</p>
+<div class="highlight">
+<pre class="chroma" tabindex="0"><code class="language-makefile" data-lang="makefile"><span class="err">call</span> <span class="err">plug</span><span class="c">#begin('~/.vim/plugged')
+</span>
+<span class="s2">" Make sure you use single quotes
+</span>
+<span class="s2">"</span> <span class="nf">Shorthand notation; fetches https</span><span class="o">:</span>//<span class="n">github</span>.<span class="n">com</span>/<span class="n">junegunn</span>/<span class="n">vim</span>-<span class="n">easy</span>-<span class="n">align</span>
+<span class="err">Plug</span> <span class="s1">'junegunn/vim-easy-align'</span>
+
+<span class="s2">" Any valid git URL is allowed
+</span><span class="s2">Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+</span>
+<span class="s2">"</span> <span class="err">Multiple</span> <span class="err">Plug</span> <span class="err">commands</span> <span class="err">can</span> <span class="err">be</span> <span class="err">written</span> <span class="err">in</span> <span class="err">a</span> <span class="err">single</span> <span class="err">line</span> <span class="err">using</span> <span class="err">|</span> <span class="err">separators</span>
+<span class="err">Plug</span> <span class="s1">'SirVer/ultisnips'</span> <span class="err">|</span> <span class="err">Plug</span> <span class="s1">'honza/vim-snippets'</span>
+
+<span class="s2">" On-demand loading
+</span><span class="s2">Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+</span><span class="s2">Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+</span>
+<span class="s2">"</span> <span class="err">Using</span> <span class="err">a</span> <span class="err">non-default</span> <span class="err">branch</span>
+<span class="nf">Plug 'rdnetto/YCM-Generator', { 'branch'</span><span class="o">:</span> '<span class="n">stable</span>' }
+
+<span class="s2">" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+</span><span class="s2">Plug 'fatih/vim-go', { 'tag': '*' }
+</span>
+<span class="s2">"</span> <span class="err">Plugin</span> <span class="err">options</span>
+<span class="nf">Plug 'nsf/gocode', { 'tag'</span><span class="o">:</span> '<span class="n">v</span>.20150303'<span class="p">,</span> '<span class="n">rtp</span>': '<span class="n">vim</span>' }
+
+<span class="s2">" Plugin outside ~/.vim/plugged with post-update hook
+</span><span class="s2">Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+</span>
+<span class="s2">"</span> <span class="err">Unmanaged</span> <span class="err">plugin</span> <span class="err">(manually</span> <span class="err">installed</span> <span class="err">and</span> <span class="err">updated)</span>
+<span class="err">Plug</span> <span class="s1">'~/my-prototype-plugin'</span>
+
+<span class="err">"</span> <span class="err">Initialize</span> <span class="err">plugin</span> <span class="err">system</span>
+<span class="err">call</span> <span class="err">plug</span><span class="c">#end()</span></code></pre>
+</div>
+</li>
+</ul>
+<p>Phần tiếp theo chúng ta sẽ bắt đầu làm đẹp Vim :v</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>[Phần 1] Vim IDE - Vim là cái quái gì?</title>
+        <author>
+            <name>Lập trình dễ òm</name>
+        </author>
+        <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-1-vim-ide-vim-la-cai-quai-gi/"/>
+        <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-1-vim-ide-vim-la-cai-quai-gi/</id>
+            <category term="IDE - Vim"/>
+
+        <updated>2022-03-04T18:46:14+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/7/cover.png" alt="" />
+                    Vim là quái gì vậy? Vim là 1 IDE được rất nhiều người sử dụng trên thế giới, Vim có sẵn trên các nền tảng, rất gọn nhẹ, khó sử dụng, nhưng khi đã xài quen rồi thì nghiện luôn 😍 Vim sau khi cấu&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/7/cover.png" alt="" />
+                <h2 id="vim-là-quái-gì-vậy">Vim là quái gì vậy?</h2>
+<p>Vim là 1 IDE được rất nhiều người sử dụng trên thế giới, Vim có sẵn trên các nền tảng, rất gọn nhẹ, khó sử dụng, nhưng khi đã xài quen rồi thì nghiện luôn 😍</p>
+<p>Vim sau khi cấu hình thì có thể sử dụng như 1 IDE mà các bạn thường sử dụng như VSCode, Sublime Text, Atom…</p>
+<h4 id="tại-sao-nên-dùng-vim-để-code">Tại sao nên dùng Vim để code?</h4>
+<ul>
+<li>[Gọn, nhẹ] Xấu cực đỉnh, chính vì thế nên rất gọn nhẹ, thời gian khởi động của Vim cực kì nhanh.</li>
+<li>[Tùy biến] Khả năng tùy biến cực cao, mặc định thì nó khá xấu, nhưng sau khi tùy biến lại thì sẽ rất đẹp.</li>
+<li>[Plugins, Extensions] Rất nhiều, hỗ trợ hầu hết các ngôn ngữ về code highlight và autocomplete, dễ dàng cài đặt và cấu hình.</li>
+<li>[Cộng đồng] Cộng đồng cực lớn, cần gì thì sẽ tìm được hỗ trợ rất nhiều trên mạng, không phải lo.</li>
+<li>[Tốc độ làm việc] Tốc độ làm việc với Vim rất nhanh, tất cả thao tác khi code với Vim đều trên bàn phím, thậm chí không cần đến chuột, nên mọi thứ rất nhanh.</li>
+<li>[Tiện dụng] Dễ dàng chuyển đổi giữa các thiết bị máy tính, giữa các hệ điều hành chỉ cần file <code>.vimrc</code> là xong, rất đơn giản, không cần cài lại thủ công từng plugin sau khi qua môi trường mới.</li>
+<li>[Cảm giác] Cảm giác code với Vim rất ngầu, pro, đỉnh, nên sẽ dễ gây nghiện 🤤, có hứng thú khi code hơn.</li>
+</ul>
+<h4 id="nhược-điểm-của-vim">Nhược điểm của Vim</h4>
+<ul>
+<li>Khó tiếp cận, khó làm quen, đòi hỏi phải có sự kiên nhẫn và quyết tâm cao, nếu không thì rất dễ nản.</li>
+<li>Rất nhiều phím tắt cần phải nhớ, phải tập làm quen nhiều lần mới nhớ được.</li>
+</ul>
+<h4 id="phím-tắt-trong-vim-thường-dùng">Phím tắt trong Vim thường dùng:</h4>
+<ul>
+<li>Di chuyển:
+<ul>
+<li>Dùng 4 phím <code>h,j,k,l</code> để di chuyển <code>qua trái, xuống, lên, qua phải</code></li>
+<li><code>gg</code> để di chuyển nhanh lên dòng số 1</li>
+<li><code>Shift + g</code> để di chuyển xuống dưới cùng của file</li>
+<li><code>^</code> đề về đầu dòng</li>
+<li><code>$</code> để về cuối</li>
+<li><code>w</code> để đi tới 1 từ (word)</li>
+<li><code>b</code> để đi lùi 1 từ</li>
+</ul>
+</li>
+<li>Chế độ <code>Insert</code>:
+<ul>
+<li><code>i</code> để đưa con trỏ về chế độ <code>Insert</code> ngay tại vị trí con trỏ</li>
+<li><code>Shift + A</code> để con trỏ về chế độ <code>Insert</code> ở cuối dòng</li>
+<li><code>a</code> để đưa con trỏ về chế độ <code>Insert</code> tại ngay sau con trỏ 1 ký tự</li>
+</ul>
+</li>
+<li>Chế độ <code>Delete</code>:
+<ul>
+<li><code>dw</code> để delete tới 1 từ</li>
+<li><code>db</code> để delete lùi 1 từ</li>
+<li><code>cw</code> để delete tới 1 từ và đưa con trỏ về chế độ <code>Insert</code></li>
+<li><code>cb</code> để delete lùi 1 từ và đưa con trỏ về chế độ <code>Insert</code></li>
+<li><code>di"</code> xóa tất cả nội dung trong cặp dấu <code>""</code>, các bạn gõ <code>di</code> và ký tự muốn xóa đến đó nhé: <code>di)</code>, <code>di]</code>
+<ul>
+<li>Ví dụ <code>"Đây là nội dung"</code> thì khi gõ <code>di"</code> thì chỉ còn lại <code>""</code></li>
+<li>Ví dụ 2: <code>function convert(value: string, convertTo: number) {}</code>, khi trỏ tại chỗ <code>value</code> và gõ <code>di)</code> thì còn lại: <code>function convert() {}</code></li>
+</ul>
+</li>
+<li><code>ci"</code> tương tự như <code>di"</code> chỉ khác sau khi xóa thì đưa con trỏ về chế độ <code>Insert</code> luôn nhé.</li>
+<li> </li>
+</ul>
+</li>
+</ul>
+<h4 id="demo-vim-mình-đang-xài">Demo Vim mình đang xài:<a href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/7/gallery/vim-demo.png" data-size="3104x1924" style="font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);"><img loading="lazy" src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/7/gallery/vim-demo-thumbnail.png" alt="Demo vim" width="768" height="476"></a></h4>
+<p>Phần tiếp theo ta sẽ cùng cài đặt Vim package manager để cài đặt plugin này nọ :)</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Phân biệt Number và parseInt trong javascript</title>
         <author>
@@ -16,8 +244,9 @@
         </author>
         <link href="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-biet-number-va-parseint-trong-javascript/"/>
         <id>https://www.laptrinhdeom.xyz/laptrinhdeom-2022/phan-biet-number-va-parseint-trong-javascript/</id>
+            <category term="Javascript cơ bản"/>
 
-        <updated>2022-03-02T23:13:08+07:00</updated>
+        <updated>2022-03-04T18:16:53+07:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://www.laptrinhdeom.xyz/laptrinhdeom-2022/media/posts/6/javascript-number-vs-parseInt.jpeg" alt="" />
